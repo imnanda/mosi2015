@@ -1,6 +1,11 @@
+<?php
+include "fungsi.php";
+include "db_connect.php";
+$sql = "SELECT * FROM t_suhu";
+$suhu = getData($sql);
+?>
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Forms</title>
     <!-- Bootstrap -->
@@ -11,7 +16,7 @@
     <script language="javascript" type="text/javascript" src="vendors/flot/excanvas.min.js"></script><![endif]-->
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+
     <![endif]-->
     <script src="vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
@@ -22,7 +27,7 @@
         function drawChart() {
 
             var data = new google.visualization.DataTable();
-            data.addColumn('number', 'Grafik Panas Kulkas');
+            data.addColumn('number', 'Grafik Suhu Kulkas');
             data.addColumn('number', 'Beku');
             data.addColumn('number', 'Dingin');
             data.addColumn('number', 'Sejuk');
@@ -30,21 +35,36 @@
             data.addColumn('number', 'panas');
 
             data.addRows([
-                [1,1,0,0,0,0],
-                [2,1,0,0,0,0],
-                [3,1,0,0,0,0],
-                [4,0,1,0,0,0],
-                [5,0,1,0,0,0],
-                [6,0,1,0,0,0],
-                [7,0,0,1,0,0],
-                [8,0,0,1,0,0],
-                [9,0,0,1,0,0],
-                [10,0,0,0,1,0],
-                [11,0,0,0,1,0],
-                [12,0,0,0,1,0],
-                [13,0,0,0,0,1],
-                [14,0,0,0,0,1],
-                [15,0,0,0,0,1]
+                [1, 1, 0, 0, 0, 0],
+                [2, 1, 0, 0, 0, 0],
+                [3, 1, 0, 0, 0, 0],
+                [4, 0, 1, 0, 0, 0],
+                [5, 0, 1, 0, 0, 0],
+                [6, 0, 1, 0, 0, 0],
+                [7, 0, 0, 1, 0, 0],
+                [8, 0, 0, 1, 0, 0],
+                [9, 0, 0, 1, 0, 0],
+                [10, 0, 0, 0, 1, 0],
+                [11, 0, 0, 0, 1, 0],
+                [12, 0, 0, 0, 1, 0],
+                [13, 0, 0, 0, 0, 1],
+                [14, 0, 0, 0, 0, 1],
+                [15, 0, 0, 0, 0, 1],
+                [16, 1, 0, 0, 0, 0],
+                [17, 1, 0, 0, 0, 0],
+                [18, 1, 0, 0, 0, 0],
+                [19, 0, 1, 0, 0, 0],
+                [20, 0, 1, 0, 0, 0],
+                [21, 0, 1, 0, 0, 0],
+                [22, 0, 0, 1, 0, 0],
+                [23, 0, 0, 1, 0, 0],
+                [24, 0, 0, 1, 0, 0],
+                [25, 0, 0, 0, 1, 0],
+                [26, 0, 0, 0, 1, 0],
+                [27, 0, 0, 0, 1, 0],
+                [28, 0, 0, 0, 0, 1],
+                [29, 0, 0, 0, 0, 1],
+                [30, 0, 0, 0, 0, 1]
             ]);
 
             var options = {
@@ -65,7 +85,54 @@
 
             chart.draw(data, options);
         }
-    </script>/
+    </script>
+
+    <script type="text/javascript">
+        google.load('visualization', '1.1', {packages: ['line']});
+        google.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = new google.visualization.DataTable();
+            data.addColumn('number', 'Grafik Kelembaban Kulkas');
+            data.addColumn('number', 'Dry');
+            data.addColumn('number', 'Moist');
+            data.addColumn('number', 'Wet');
+
+
+            data.addRows([
+                [1, 1, 0, 0],
+                [2, 1, 0, 0],
+                [3, 1, 0, 0],
+                [4, 0, 1, 0],
+                [5, 0, 1, 0],
+                [6, 0, 1, 0],
+                [7, 0, 0, 1],
+                [8, 0, 0, 1],
+                [9, 0, 0, 1],
+                [10, 0, 0, 0]
+            ]);
+
+            var options = {
+                chart: {
+                    title: ' ',
+                    subtitle: ' '
+                },
+                width: 900,
+                height: 500,
+                axes: {
+                    x: {
+                        0: {side: 'top'}
+                    }
+                }
+            };
+
+            var chart = new google.charts.Line(document.getElementById('line_top_x2'));
+
+            chart.draw(data, options);
+        }
+    </script>
+
 
 </head>
 
@@ -103,81 +170,7 @@
                     </li>
                     <li class="dropdown">
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle">Settings <b class="caret"></b>
-
                         </a>
-                        <ul class="dropdown-menu" id="menu1">
-                            <li>
-                                <a href="#">Tools <i class="icon-arrow-right"></i>
-
-                                </a>
-                                <ul class="dropdown-menu sub-menu">
-                                    <li>
-                                        <a href="#">Reports</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Logs</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Errors</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">SEO Settings</a>
-                            </li>
-                            <li>
-                                <a href="#">Other Link</a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#">Other Link</a>
-                            </li>
-                            <li>
-                                <a href="#">Other Link</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Content <i
-                                class="caret"></i>
-
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a tabindex="-1" href="#">Blog</a>
-                            </li>
-                            <li>
-                                <a tabindex="-1" href="#">News</a>
-                            </li>
-                            <li>
-                                <a tabindex="-1" href="#">Custom Pages</a>
-                            </li>
-                            <li>
-                                <a tabindex="-1" href="#">Calendar</a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a tabindex="-1" href="#">FAQ</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Users <i
-                                class="caret"></i>
-
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a tabindex="-1" href="#">User List</a>
-                            </li>
-                            <li>
-                                <a tabindex="-1" href="#">Search</a>
-                            </li>
-                            <li>
-                                <a tabindex="-1" href="#">Permissions</a>
-                            </li>
-                        </ul>
-                    </li>
                 </ul>
             </div>
             <!--/.nav-collapse -->
@@ -210,47 +203,21 @@
                             <form class="form-horizontal">
                                 <fieldset>
                                     <legend>Interval Suhu</legend>
-                                    <div class="control-group">
-                                        <label class="control-label">Beku</label>
-
+                                    <?php
+                                    $i = 1;
+                                    foreach ($suhu as $row) {
+                                        ?>
+                                        <div class="control-group">
+                                            <label class="control-label"><?php echo $row['nama_suhu'] ?></label>
                                         <div class="controls">
-                                            <span class="uneditable-input">1</span>
-                                            <span class="uneditable-input">15</span>
+                                                <span class="uneditable-input"><?php echo $row['suhu1'] ?></span>
+                                                <span class="uneditable-input"><?php echo $row['suhu2'] ?></span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="control-group">
-                                        <label class="control-label">Dingin</label>
-
-                                        <div class="controls">
-                                            <span class="uneditable-input">10</span>
-                                            <span class="uneditable-input">25</span>
-                                        </div>
-                                    </div>
-                                    <div class="control-group">
-                                        <label class="control-label">Sejuk</label>
-
-                                        <div class="controls">
-                                            <span class="uneditable-input">20</span>
-                                            <span class="uneditable-input">35</span>
-                                        </div>
-                                    </div>
-                                    <div class="control-group">
-                                        <label class="control-label">Normal</label>
-
-                                        <div class="controls">
-                                            <span class="uneditable-input">30</span>
-                                            <span class="uneditable-input">45</span>
-                                        </div>
-                                    </div>
-                                    <div class="control-group">
-                                        <label class="control-label">Panas</label>
-
-                                        <div class="controls">
-                                            <span class="uneditable-input">40</span>
-                                            <span class="uneditable-input">55</span>
-                                        </div>
-                                    </div>
-
+                                        <?php
+                                        $i++;
+                                    }
+                                    ?>
                                 </fieldset>
                             </form>
 
@@ -261,12 +228,14 @@
                                     <legend>Input Suhu</legend>
                                     <div class="control-group">
                                         <label class="control-label">Suhu</label>
+
                                         <div class="controls">
                                             <input class="input-mini" id="focusedInput" type="text" value="">
                                         </div>
                                     </div>
                                     <div class="control-group">
                                         <label class="control-label">Kelembaban</label>
+
                                         <div class="controls">
                                             <input class="input-mini" id="focusedInput" type="text" value="">
                                         </div>
@@ -282,15 +251,17 @@
                         <button type="reset" class="btn">Cancel</button>
                     </div>
                     <div id="line_top_x"></div>
-                    </div>
+                    <div class="form-actions"></div>
+                    <div id="line_top_x2"></div>
                 </div>
             </div>
         </div>
     </div>
-    <hr>
-    <footer>
-        <p>&copy; MOSI KELOMPOK</p>
-    </footer>
+</div>
+<hr>
+<footer>
+    <p align="center">&copy; MOSI KELOMPOK</p>
+</footer>
 </div>
 <!--/.fluid-container-->
 <link href="vendors/datepicker.css" rel="stylesheet" media="screen">
@@ -333,7 +304,7 @@
                 var $current = index + 1;
                 var $percent = ($current / $total) * 100;
                 $('#rootwizard').find('.bar').css({width: $percent + '%'});
-                // If it's the last tab then hide the last button and show the finish instead
+
                 if ($current >= $total) {
                     $('#rootwizard').find('.pager .next').hide();
                     $('#rootwizard').find('.pager .finish').show();
