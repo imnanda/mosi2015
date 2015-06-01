@@ -14,6 +14,59 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <script src="vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+        google.load('visualization', '1.1', {packages: ['line']});
+        google.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = new google.visualization.DataTable();
+            data.addColumn('number', 'Grafik Panas Kulkas');
+            data.addColumn('number', 'Beku');
+            data.addColumn('number', 'Dingin');
+            data.addColumn('number', 'Sejuk');
+            data.addColumn('number', 'Normal');
+            data.addColumn('number', 'panas');
+
+            data.addRows([
+                [1,1,0,0,0,0],
+                [2,1,0,0,0,0],
+                [3,1,0,0,0,0],
+                [4,0,1,0,0,0],
+                [5,0,1,0,0,0],
+                [6,0,1,0,0,0],
+                [7,0,0,1,0,0],
+                [8,0,0,1,0,0],
+                [9,0,0,1,0,0],
+                [10,0,0,0,1,0],
+                [11,0,0,0,1,0],
+                [12,0,0,0,1,0],
+                [13,0,0,0,0,1],
+                [14,0,0,0,0,1],
+                [15,0,0,0,0,1]
+            ]);
+
+            var options = {
+                chart: {
+                    title: ' ',
+                    subtitle: ' '
+                },
+                width: 900,
+                height: 500,
+                axes: {
+                    x: {
+                        0: {side: 'top'}
+                    }
+                }
+            };
+
+            var chart = new google.charts.Line(document.getElementById('line_top_x'));
+
+            chart.draw(data, options);
+        }
+    </script>/
+
 </head>
 
 <body>
@@ -225,8 +278,10 @@
 
                     </div>
                     <div class="form-actions">
-                        <button type="submit" class="btn btn-primary">Save changes</button>
+                        <button type="submit" class="btn btn-primary">Hitung</button>
                         <button type="reset" class="btn">Cancel</button>
+                    </div>
+                    <div id="line_top_x"></div>
                     </div>
                 </div>
             </div>
