@@ -2,6 +2,8 @@
 include "fungsi.php";
 include "db_connect.php";
 $sql = "SELECT * FROM t_suhu";
+$sql2 = "SELECT * FROM t_kelembaban";
+$kelembaban = getdata($sql2);
 $suhu = getData($sql);
 ?>
 <!DOCTYPE html>
@@ -35,36 +37,22 @@ $suhu = getData($sql);
             data.addColumn('number', 'panas');
 
             data.addRows([
-                [1, 1, 0, 0, 0, 0],
+                [1, 0, 0, 0, 0, 0],
                 [2, 1, 0, 0, 0, 0],
-                [3, 1, 0, 0, 0, 0],
+                [3, 0, 0, 0, 0, 0],
                 [4, 0, 1, 0, 0, 0],
-                [5, 0, 1, 0, 0, 0],
-                [6, 0, 1, 0, 0, 0],
-                [7, 0, 0, 1, 0, 0],
-                [8, 0, 0, 1, 0, 0],
-                [9, 0, 0, 1, 0, 0],
-                [10, 0, 0, 0, 1, 0],
-                [11, 0, 0, 0, 1, 0],
-                [12, 0, 0, 0, 1, 0],
-                [13, 0, 0, 0, 0, 1],
-                [14, 0, 0, 0, 0, 1],
-                [15, 0, 0, 0, 0, 1],
-                [16, 1, 0, 0, 0, 0],
-                [17, 1, 0, 0, 0, 0],
-                [18, 1, 0, 0, 0, 0],
-                [19, 0, 1, 0, 0, 0],
-                [20, 0, 1, 0, 0, 0],
-                [21, 0, 1, 0, 0, 0],
-                [22, 0, 0, 1, 0, 0],
-                [23, 0, 0, 1, 0, 0],
-                [24, 0, 0, 1, 0, 0],
-                [25, 0, 0, 0, 1, 0],
-                [26, 0, 0, 0, 1, 0],
-                [27, 0, 0, 0, 1, 0],
-                [28, 0, 0, 0, 0, 1],
-                [29, 0, 0, 0, 0, 1],
-                [30, 0, 0, 0, 0, 1]
+                [5, 0, 0, 0, 0, 0],
+                [6, 0, 0, 1, 0, 0],
+                [7, 0, 0, 0, 0, 0],
+                [8, 0, 0, 0, 1, 0],
+                [9, 0, 0, 0, 0, 0],
+                [10, 0, 0, 0, 0, 1],
+                [11, 0, 0, 0, 0, 0],
+                [12, 0, 0, 0, 0, 0],
+                [13, 0, 0, 0, 0, 0],
+                [14, 0, 0, 0, 0, 0],
+                [15, 0, 0, 0, 0, 0]
+
             ]);
 
             var options = {
@@ -104,9 +92,9 @@ $suhu = getData($sql);
                 [1, 1, 0, 0],
                 [2, 1, 0, 0],
                 [3, 1, 0, 0],
-                [4, 0, 1, 0],
+                [4, 0, 0, 0],
                 [5, 0, 1, 0],
-                [6, 0, 1, 0],
+                [6, 0, 0, 0],
                 [7, 0, 0, 1],
                 [8, 0, 0, 1],
                 [9, 0, 0, 1],
@@ -209,7 +197,8 @@ $suhu = getData($sql);
                                         ?>
                                         <div class="control-group">
                                             <label class="control-label"><?php echo $row['nama_suhu'] ?></label>
-                                        <div class="controls">
+
+                                            <div class="controls">
                                                 <span class="uneditable-input"><?php echo $row['suhu1'] ?></span>
                                                 <span class="uneditable-input"><?php echo $row['suhu2'] ?></span>
                                             </div>
@@ -223,36 +212,102 @@ $suhu = getData($sql);
 
                         </div>
                         <div class="span6">
-                            <form class="form-horizontal">
+                            <form class="form-horizontal" action="" method="post">
+                                <fieldset>
+                                    <legend>Interval Kelembaban</legend>
+                                    <?php
+                                    $inputsuhu = $_POST['inputsuhu'];
+                                    $inputkelembaban = $_POST['inputkelembaban'];
+                                    $i = 1;
+                                    foreach ($suhu as $row)
+                                    {
+                                        $tengah = ($row['suhu2']/2);
+                                        if (($inputsuhu <= $row['suhu1']))
+                                        {
+                                            $hasilsuhu1 = 0;
+
+                                        }
+                                        elseif (($row['suhu1']<= $inputsuhu) and ($inputsuhu <= $tengah))
+                                        {
+                                            $hasilsuhu1 = ($inputsuhu - $row['suhu1']) / ($tengah - $row['suhu1']);
+
+                                        }
+                                        elseif (($tengah <= $inputsuhu) and ($inputsuhu <= $row['suhu2']))
+                                        {
+                                            $hasilsuhu1 = (($row['suhu2'] - $inputsuhu)/($row['suhu2'] - $tengah));
+                                           
+                                        }
+                                        else
+                                        {
+                                            $hasilsuhu1 = 0;
+                                        }
+                                    }
+                                    $i++;
+                                        var_dump($hasilsuhu1);
+                                    ?>
+                                    <div class="control-group">
+                                        <label class="control-label"><?php echo $row['nama_kelembaban'] ?></label>
+
+                                        <div class="controls">
+                                            <span class="uneditable-input"><?php echo $row['suhu1'] ?></span>
+                                            <span class="uneditable-input"><?php echo $row['suhu2'] ?></span>
+                                        </div>
+                                    </div>
+
+                                </fieldset>
                                 <fieldset>
                                     <legend>Input Suhu</legend>
                                     <div class="control-group">
                                         <label class="control-label">Suhu</label>
 
                                         <div class="controls">
-                                            <input class="input-mini" id="focusedInput" type="text" value="">
+                                            <input class="input-mini" id="focusedInput" type="text" value=""
+                                                   name="inputsuhu">
                                         </div>
                                     </div>
                                     <div class="control-group">
                                         <label class="control-label">Kelembaban</label>
 
                                         <div class="controls">
-                                            <input class="input-mini" id="focusedInput" type="text" value="">
+                                            <input class="input-mini" id="focusedInput" type="text" value=""
+                                                   name="inputkelembaban">
                                         </div>
                                     </div>
                                 </fieldset>
-                            </form>
 
                         </div>
-
-                    </div>
-                    <div class="form-actions">
                         <button type="submit" class="btn btn-primary">Hitung</button>
                         <button type="reset" class="btn">Cancel</button>
+                        </form>
+                        <div id="line_top_x"></div>
+                        <div class="form-actions"></div>
+                        <div id="line_top_x2"></div>
+                        <form class="form-horizontal">
+                            <fieldset>
+                                <legend>Hasil Perhitungan</legend>
+                                <?php
+                                $i = 1;
+                                foreach ($kelembaban as $row) {
+                                ?>
+                                <div class="control-group">
+                                    <label class="control-label"><?php echo $row['nama_kelembaban'] ?></label>
+
+                                    <div class="controls">
+                                        <span class="uneditable-input"><?php echo $row['kelembaban1'] ?></span>
+                                        <span class="uneditable-input"><?php echo $row['kelembaban2'] ?></span>
+                                    </div>
+                                </div>
+                                <?php
+                                $i++;
+                                }
+                                ?>
+                            </fieldset>
+
+                        </form>
+
                     </div>
-                    <div id="line_top_x"></div>
-                    <div class="form-actions"></div>
-                    <div id="line_top_x2"></div>
+
+
                 </div>
             </div>
         </div>
