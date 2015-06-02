@@ -216,44 +216,21 @@ $suhu = getData($sql);
                                 <fieldset>
                                     <legend>Interval Kelembaban</legend>
                                     <?php
-                                    $inputsuhu = $_POST['inputsuhu'];
-                                    $inputkelembaban = $_POST['inputkelembaban'];
                                     $i = 1;
-                                    foreach ($suhu as $row)
-                                    {
-                                        $tengah = ($row['suhu2']/2);
-                                        if (($inputsuhu <= $row['suhu1']))
-                                        {
-                                            $hasilsuhu1 = 0;
+                                    foreach ($kelembaban as $row) {
+                                        ?>
+                                        <div class="control-group">
+                                            <label class="control-label"><?php echo $row['nama_kelembaban'] ?></label>
 
-                                        }
-                                        elseif (($row['suhu1']<= $inputsuhu) and ($inputsuhu <= $tengah))
-                                        {
-                                            $hasilsuhu1 = ($inputsuhu - $row['suhu1']) / ($tengah - $row['suhu1']);
-
-                                        }
-                                        elseif (($tengah <= $inputsuhu) and ($inputsuhu <= $row['suhu2']))
-                                        {
-                                            $hasilsuhu1 = (($row['suhu2'] - $inputsuhu)/($row['suhu2'] - $tengah));
-                                           
-                                        }
-                                        else
-                                        {
-                                            $hasilsuhu1 = 0;
-                                        }
-                                    }
-                                    $i++;
-                                        var_dump($hasilsuhu1);
-                                    ?>
-                                    <div class="control-group">
-                                        <label class="control-label"><?php echo $row['nama_kelembaban'] ?></label>
-
-                                        <div class="controls">
-                                            <span class="uneditable-input"><?php echo $row['suhu1'] ?></span>
-                                            <span class="uneditable-input"><?php echo $row['suhu2'] ?></span>
+                                            <div class="controls">
+                                                <span class="uneditable-input"><?php echo $row['kelembaban1'] ?></span>
+                                                <span class="uneditable-input"><?php echo $row['kelembaban2'] ?></span>
+                                            </div>
                                         </div>
-                                    </div>
-
+                                        <?php
+                                        $i++;
+                                    }
+                                    ?>
                                 </fieldset>
                                 <fieldset>
                                     <legend>Input Suhu</legend>
@@ -282,32 +259,83 @@ $suhu = getData($sql);
                         <div id="line_top_x"></div>
                         <div class="form-actions"></div>
                         <div id="line_top_x2"></div>
+
                         <form class="form-horizontal">
                             <fieldset>
-                                <legend>Hasil Perhitungan</legend>
-                                <?php
-                                $i = 1;
-                                foreach ($kelembaban as $row) {
-                                ?>
+                                <legend>Hasil Perhitungan Suhu</legend>
+
                                 <div class="control-group">
-                                    <label class="control-label"><?php echo $row['nama_kelembaban'] ?></label>
+                                    <?php
+                                    $inputsuhu = $_POST['inputsuhu'];
+                                    $inputkelembaban = $_POST['inputkelembaban'];
+                                    $i = 1;
+                                    foreach ($suhu as $row) {
+                                        $tengah = ($row['suhu2'] / 2);
+                                        if (($inputsuhu <= $row['suhu1'])) {
+                                            $hasilsuhu1 = 0;
+                                        } elseif (($row['suhu1'] <= $inputsuhu) and ($inputsuhu <= $tengah)) {
+                                            $hasilsuhu1 = ($inputsuhu - $row['suhu1']) / ($tengah - $row['suhu1']);
+                                        } elseif (($tengah <= $inputsuhu) and ($inputsuhu <= $row['suhu2'])) {
+                                            $hasilsuhu1 = (($row['suhu2'] - $inputsuhu) / ($row['suhu2'] - $tengah));
+                                        } else {
+                                            $hasilsuhu1 = 0;
+                                            //var_dump($hasilsuhu1);
 
-                                    <div class="controls">
-                                        <span class="uneditable-input"><?php echo $row['kelembaban1'] ?></span>
-                                        <span class="uneditable-input"><?php echo $row['kelembaban2'] ?></span>
-                                    </div>
+                                        }
+                                        ?>
+                                        <label class="control-label"><?php echo $row['nama_suhu'] ?></label>
+                                        <div class="controls">
+                                            <span class="uneditable-input"><?php echo $hasilsuhu1 ?></span>
+                                        </div>
+                                        <br>
+                                    <?php
+                                    }
+                                    $i++;
+                                    ?>
                                 </div>
-                                <?php
-                                $i++;
-                                }
-                                ?>
                             </fieldset>
-
                         </form>
+                        <form class="form-horizontal">
+                            <fieldset>
+                                <legend>Hasil Perhitungan Kelembaban</legend>
 
+                                <div class="control-group">
+                                    <?php
+                                    $inputkelembaban = $_POST['inputkelembaban'];
+                                    $i = 1;
+                                    foreach ($kelembaban as $row) {
+                                        $tengah2 = ($row['kelembaban2']/2);
+                                        if($inputkelembaban <= $row['kelembaban1'])
+                                        {
+                                            $hasilkelembaban = 0;
+                                        }
+                                        elseif (($row['kelembaban1']<= $inputkelembaban) and ($inputkelembaban <= $tengah2))
+                                        {
+                                            $hasilkelembaban = ($inputsuhu - $row['kelembaban1']) / ($tengah2 - $row['kelembaban1']);
+                                        }
+                                        elseif (($tengah2 <= $inputkelembaban) and ($inputkelembaban <= $row['kelembaban2']))
+                                        {
+                                            $hasilkelembaban = (($row['kelembaban2'] - $inputkelembaban)/($row['kelembaban2'] - $tengah2));
+                                        }
+                                        else
+                                        {
+                                            $hasilkelembaban = 0;
+                                        }
+                                        ?>
+                                        <label class="control-label"><?php echo $row['nama_kelembaban'] ?></label>
+                                        <div class="controls">
+                                            <span class="uneditable-input"><?php echo $hasilkelembaban ?></span>
+                                        </div>
+                                        <br>
+                                    <?php
+                                    }
+                                    $i++;
+                                    ?>
+                                </div>
+                            </fieldset>
+                        </form>
+                        
                     </div>
-
-
                 </div>
             </div>
         </div>
