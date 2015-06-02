@@ -29,14 +29,14 @@
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.78531075" vertical-offset="6303" max-vertical-offset="8280">
-              <caret line="336" column="24" selection-start-line="336" selection-start-column="24" selection-end-line="336" selection-end-column="24" />
+              <caret line="336" column="0" selection-start-line="336" selection-start-column="0" selection-end-line="336" selection-end-column="0" />
               <folding>
-                <marker date="1433223944659" expanded="true" signature="62:82" placeholder="SELECT * FRO..t_suhu..." />
-                <marker date="1433223944659" expanded="true" signature="94:120" placeholder="SELECT * FRO..t_kelembaban..." />
-                <marker date="1433223944659" expanded="true" signature="15010:15067" placeholder="..." />
-                <marker date="1433223944659" expanded="true" signature="16062:16288" placeholder="..." />
-                <marker date="1433223944659" expanded="true" signature="16104:16142" placeholder="{...}" />
-                <marker date="1433223944659" expanded="true" signature="16165:16288" placeholder="{...}" />
+                <marker date="1433224296414" expanded="true" signature="62:82" placeholder="SELECT * FRO..t_suhu..." />
+                <marker date="1433224296414" expanded="true" signature="94:120" placeholder="SELECT * FRO..t_kelembaban..." />
+                <marker date="1433224296414" expanded="true" signature="14986:15043" placeholder="..." />
+                <marker date="1433224296414" expanded="true" signature="16038:16264" placeholder="..." />
+                <marker date="1433224296414" expanded="true" signature="16080:16118" placeholder="{...}" />
+                <marker date="1433224296414" expanded="true" signature="16141:16264" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -385,12 +385,12 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="5140" max-vertical-offset="6740">
           <caret line="257" column="26" selection-start-line="257" selection-start-column="26" selection-end-line="257" selection-end-column="26" />
           <folding>
-            <marker date="1433223944659" expanded="true" signature="62:82" placeholder="SELECT * FRO..t_suhu..." />
-            <marker date="1433223944659" expanded="true" signature="94:120" placeholder="SELECT * FRO..t_kelembaban..." />
-            <marker date="1433223944659" expanded="true" signature="15010:15067" placeholder="..." />
-            <marker date="1433223944659" expanded="true" signature="16062:16288" placeholder="..." />
-            <marker date="1433223944659" expanded="true" signature="16104:16142" placeholder="{...}" />
-            <marker date="1433223944659" expanded="true" signature="16165:16288" placeholder="{...}" />
+            <marker date="1433224296414" expanded="true" signature="62:82" placeholder="SELECT * FRO..t_suhu..." />
+            <marker date="1433224296414" expanded="true" signature="94:120" placeholder="SELECT * FRO..t_kelembaban..." />
+            <marker date="1433224296414" expanded="true" signature="14986:15043" placeholder="..." />
+            <marker date="1433224296414" expanded="true" signature="16038:16264" placeholder="..." />
+            <marker date="1433224296414" expanded="true" signature="16080:16118" placeholder="{...}" />
+            <marker date="1433224296414" expanded="true" signature="16141:16264" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -469,12 +469,12 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="6820">
           <caret line="33" column="69" selection-start-line="33" selection-start-column="69" selection-end-line="33" selection-end-column="69" />
           <folding>
-            <marker date="1433223944659" expanded="true" signature="62:82" placeholder="SELECT * FRO..t_suhu..." />
-            <marker date="1433223944659" expanded="true" signature="94:120" placeholder="SELECT * FRO..t_kelembaban..." />
-            <marker date="1433223944659" expanded="true" signature="15010:15067" placeholder="..." />
-            <marker date="1433223944659" expanded="true" signature="16062:16288" placeholder="..." />
-            <marker date="1433223944659" expanded="true" signature="16104:16142" placeholder="{...}" />
-            <marker date="1433223944659" expanded="true" signature="16165:16288" placeholder="{...}" />
+            <marker date="1433224296414" expanded="true" signature="62:82" placeholder="SELECT * FRO..t_suhu..." />
+            <marker date="1433224296414" expanded="true" signature="94:120" placeholder="SELECT * FRO..t_kelembaban..." />
+            <marker date="1433224296414" expanded="true" signature="14986:15043" placeholder="..." />
+            <marker date="1433224296414" expanded="true" signature="16038:16264" placeholder="..." />
+            <marker date="1433224296414" expanded="true" signature="16080:16118" placeholder="{...}" />
+            <marker date="1433224296414" expanded="true" signature="16141:16264" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -537,12 +537,12 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="3395" max-vertical-offset="6100">
           <caret line="196" column="76" selection-start-line="196" selection-start-column="76" selection-end-line="196" selection-end-column="76" />
           <folding>
-            <marker date="1433223944659" expanded="true" signature="62:82" placeholder="SELECT * FRO..t_suhu..." />
-            <marker date="1433223944659" expanded="true" signature="94:120" placeholder="SELECT * FRO..t_kelembaban..." />
-            <marker date="1433223944659" expanded="true" signature="15010:15067" placeholder="..." />
-            <marker date="1433223944659" expanded="true" signature="16062:16288" placeholder="..." />
-            <marker date="1433223944659" expanded="true" signature="16104:16142" placeholder="{...}" />
-            <marker date="1433223944659" expanded="true" signature="16165:16288" placeholder="{...}" />
+            <marker date="1433224296414" expanded="true" signature="62:82" placeholder="SELECT * FRO..t_suhu..." />
+            <marker date="1433224296414" expanded="true" signature="94:120" placeholder="SELECT * FRO..t_kelembaban..." />
+            <marker date="1433224296414" expanded="true" signature="14986:15043" placeholder="..." />
+            <marker date="1433224296414" expanded="true" signature="16038:16264" placeholder="..." />
+            <marker date="1433224296414" expanded="true" signature="16080:16118" placeholder="{...}" />
+            <marker date="1433224296414" expanded="true" signature="16141:16264" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -568,12 +568,12 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="10940">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1433223944659" expanded="true" signature="62:82" placeholder="SELECT * FRO..t_suhu..." />
-            <marker date="1433223944659" expanded="true" signature="94:120" placeholder="SELECT * FRO..t_kelembaban..." />
-            <marker date="1433223944659" expanded="true" signature="15010:15067" placeholder="..." />
-            <marker date="1433223944659" expanded="true" signature="16062:16288" placeholder="..." />
-            <marker date="1433223944659" expanded="true" signature="16104:16142" placeholder="{...}" />
-            <marker date="1433223944659" expanded="true" signature="16165:16288" placeholder="{...}" />
+            <marker date="1433224296414" expanded="true" signature="62:82" placeholder="SELECT * FRO..t_suhu..." />
+            <marker date="1433224296414" expanded="true" signature="94:120" placeholder="SELECT * FRO..t_kelembaban..." />
+            <marker date="1433224296414" expanded="true" signature="14986:15043" placeholder="..." />
+            <marker date="1433224296414" expanded="true" signature="16038:16264" placeholder="..." />
+            <marker date="1433224296414" expanded="true" signature="16080:16118" placeholder="{...}" />
+            <marker date="1433224296414" expanded="true" signature="16141:16264" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -599,12 +599,12 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="3648" max-vertical-offset="10900">
           <caret line="201" column="46" selection-start-line="201" selection-start-column="46" selection-end-line="201" selection-end-column="46" />
           <folding>
-            <marker date="1433223944659" expanded="true" signature="62:82" placeholder="SELECT * FRO..t_suhu..." />
-            <marker date="1433223944659" expanded="true" signature="94:120" placeholder="SELECT * FRO..t_kelembaban..." />
-            <marker date="1433223944659" expanded="true" signature="15010:15067" placeholder="..." />
-            <marker date="1433223944659" expanded="true" signature="16062:16288" placeholder="..." />
-            <marker date="1433223944659" expanded="true" signature="16104:16142" placeholder="{...}" />
-            <marker date="1433223944659" expanded="true" signature="16165:16288" placeholder="{...}" />
+            <marker date="1433224296414" expanded="true" signature="62:82" placeholder="SELECT * FRO..t_suhu..." />
+            <marker date="1433224296414" expanded="true" signature="94:120" placeholder="SELECT * FRO..t_kelembaban..." />
+            <marker date="1433224296414" expanded="true" signature="14986:15043" placeholder="..." />
+            <marker date="1433224296414" expanded="true" signature="16038:16264" placeholder="..." />
+            <marker date="1433224296414" expanded="true" signature="16080:16118" placeholder="{...}" />
+            <marker date="1433224296414" expanded="true" signature="16141:16264" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -705,14 +705,14 @@
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.78531075" vertical-offset="6303" max-vertical-offset="8280">
-          <caret line="336" column="24" selection-start-line="336" selection-start-column="24" selection-end-line="336" selection-end-column="24" />
+          <caret line="336" column="0" selection-start-line="336" selection-start-column="0" selection-end-line="336" selection-end-column="0" />
           <folding>
-            <marker date="1433223944659" expanded="true" signature="62:82" placeholder="SELECT * FRO..t_suhu..." />
-            <marker date="1433223944659" expanded="true" signature="94:120" placeholder="SELECT * FRO..t_kelembaban..." />
-            <marker date="1433223944659" expanded="true" signature="15010:15067" placeholder="..." />
-            <marker date="1433223944659" expanded="true" signature="16062:16288" placeholder="..." />
-            <marker date="1433223944659" expanded="true" signature="16104:16142" placeholder="{...}" />
-            <marker date="1433223944659" expanded="true" signature="16165:16288" placeholder="{...}" />
+            <marker date="1433224296414" expanded="true" signature="62:82" placeholder="SELECT * FRO..t_suhu..." />
+            <marker date="1433224296414" expanded="true" signature="94:120" placeholder="SELECT * FRO..t_kelembaban..." />
+            <marker date="1433224296414" expanded="true" signature="14986:15043" placeholder="..." />
+            <marker date="1433224296414" expanded="true" signature="16038:16264" placeholder="..." />
+            <marker date="1433224296414" expanded="true" signature="16080:16118" placeholder="{...}" />
+            <marker date="1433224296414" expanded="true" signature="16141:16264" placeholder="{...}" />
           </folding>
         </state>
       </provider>

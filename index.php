@@ -334,7 +334,7 @@ $suhu = getData($sql);
                                 </div>
                             </fieldset>
                         </form>
-                        
+
                     </div>
                 </div>
             </div>
